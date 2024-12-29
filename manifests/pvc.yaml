@@ -1,13 +1,14 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: pvc-samuelsena
+  name: rules-pvc
 spec:
   accessModes:
     - ReadWriteMany
   resources:
     requests:
-      storage: 128Mi
+      storage: 1Gi
+  storageClassName: default-storage-class-samuelsena
   selector:
     matchLabels:
       namespace: samuelsena
