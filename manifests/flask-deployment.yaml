@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: api-server
+  template:
+    metadata:
+      labels:
+        app: api-server
+    spec:
+      containers:
+        - name: api-server
+          image: globson/api-server:0.1
+          ports:
+            - containerPort: 52057
+          volumeMounts:
+            - name: rules-volume
+              mountPath: /app/rules
+      volumes:
+        - name: rules-volume
+          persistentVolumeClaim:
+            claimName: rules-pvc
