@@ -10,7 +10,7 @@ spec:
     spec:
       containers:
         - name: rules-generator
-          image: globson/rules-generator:0.1
+          image: globson/rules-generator:latest
           volumeMounts:
             - name: rules-volume
               mountPath: /app/rules
