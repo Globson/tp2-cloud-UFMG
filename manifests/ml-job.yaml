@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: rules-generator-job2
+  name: rules-generator-job1
   labels:
     app: rules-generator
 spec:
