@@ -13,6 +13,9 @@ spec:
       containers:
         - name: rules-generator
           image: globson/rules-generator:latest
+          env:
+            - name: DATASET_NAME
+              value: "2023_spotify_ds1.csv"
           volumeMounts:
             - name: rules-volume
               mountPath: /app/rules
