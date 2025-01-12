@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: api-server
-          image: globson/api-server:latest
+          image: globson/api-server:2.0
           ports:
             - containerPort: 52057
           volumeMounts:
