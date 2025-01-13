@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: rules-generator-job2
+  name: rules-generator-job1
   labels:
     app: rules-generator
 spec:
@@ -15,7 +15,7 @@ spec:
           image: globson/rules-generator:2.0
           env:
             - name: DATASET_NAME
-              value: "2023_spotify_ds2.csv"
+              value: "2023_spotify_ds1.csv"
           volumeMounts:
             - name: rules-volume
               mountPath: /app/rules
