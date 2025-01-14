@@ -7,6 +7,11 @@ spec:
   selector:
     matchLabels:
       app: api-server
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
   template:
     metadata:
       labels:
@@ -14,7 +19,7 @@ spec:
     spec:
       containers:
         - name: api-server
-          image: globson/api-server:2.0
+          image: globson/api-server:3.0
           ports:
             - containerPort: 52057
           volumeMounts:
